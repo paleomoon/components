@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>DatePicker</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="http://omcbb8o2a.bkt.clouddn.com/logo.jpg">
+    <style type="text/css">
+        .datepicker-input {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 5px;
+            height: 24px;
+            line-height: 24px;
+            width: 230px;
+        }
+        .datepicker-input:focus {
+            outline: 0 none;
+            border: 1px solid #1abc9c;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="datepicker-input" readonly placeholder="点击选择日期">
+    <script type="text/javascript" src="./data.js"></script>
+    <script type="text/javascript">
+        datepicker.init('.datepicker-input');
+    </script>
+</body>
+</html>
