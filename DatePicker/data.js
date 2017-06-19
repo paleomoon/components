@@ -4,11 +4,11 @@
     var wrapper;//组件容器
 
     /**
-     *获取一个月的数据
+     * 获取一个月的数据
      *
-     *@param year 年
-     *@param month 真实月份
-     *@return 一个月的数据
+     * @param year 年
+     * @param month 真实月份
+     * @return 一个月的数据
      */
     datepicker.getMonthData = function (year, month) {
         var ret = [];
@@ -71,22 +71,22 @@
                 month: thisMonth,
                 date: date,
                 showDate: showDate
-        });
+            });
         }
 
         return {
             year: year,
             month: month,
             days: ret
-            };
+        };
     };
 
     /**
-     *获取需要渲染的HTML结构
+     * 获取需要渲染的HTML结构
      *
-     *@param year 年
-     *@param month 真实月份
-     *@return HTML字符串
+     * @param year 年
+     * @param month 真实月份
+     * @return HTML字符串
      */
     datepicker.getRenderData = function (year, month) {
         monthData = datepicker.getMonthData(year, month);
@@ -111,6 +111,7 @@
                     '</tr>'+
                 '</thead>'+
                 '<tbody>';
+
         for (var i = 0; i < monthData.days.length; i++) {
         	var thisDate = monthData.days[i];
         	if (i % 7 === 0) {
@@ -137,13 +138,14 @@
         html +='</tbody>'+
             '</table>'+
         '</div>';
+
         return html;
     };
 
     /**
-     *渲染显示
+     * 渲染显示
      *
-     *@param direction 'pre'-上月 'next'-下月
+     * @param direction 'pre'-上月 'next'-下月
      */
     datepicker.render = function (direction) {
         var year, month;
@@ -180,9 +182,9 @@
     };
 
     /**
-     *初始化组件并使用
+     * 初始化组件并使用
      *
-     *@param inputName 输入框选择符
+     * @param inputName 输入框选择符
      */
     datepicker.init = function (inputName) {
         //渲染显示
@@ -261,30 +263,23 @@
     window.datepicker = datepicker;
 })();
 
-//获取某年某月共有多少天
+   
+
+    //获取某年某月共有多少天
     /*
     var getMonthDayNum = function (year, month) {
-        if (month === 2) {
-            //闰年
-            if ((year%4 == 0 && year%100 !=0) || year%400 == 0) {
-                return 29;
-            }
-            //平年
-            else {
-                return 28;
-            }
+        //判断是否是闰年
+        var isLeapYear = function (year) {
+            return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+        };
+
+        var monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        var days = monthDays[month];
+        if ( month == 1 && isLeapYear(year) ) {
+            days = 29;
         }
-        else {
-            //31天的月份
-            var bigMonth = [1, 3, 5, 7, 8, 10, 12];
-            if (bigMonth.some(function (item) {
-                return item === month;
-            })) {
-                return 31;
-            }
-            else {
-                return 30;
-            }
-        }
+        return days;
     };
     */
+
+    
