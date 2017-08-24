@@ -1,0 +1,66 @@
+.image-roll-wrapper {
+    position: relative;
+    /*width: 600px;*/
+    /*height: 400px;*/
+    overflow: hidden;
+}
+.image-roll-wrapper .image-roll-list {
+    position: absolute;
+    /*left: -600px;*/
+    /*width: 4200px;*/
+    z-index: 1;
+}
+.image-roll-wrapper .image-roll-list img {
+    float: left;
+}
+.image-roll-wrapper .image-roll-focus {
+    position: absolute;
+    height: 10px;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+.image-roll-wrapper .image-roll-focus span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-color: #333;
+    cursor: pointer;
+}
+.image-roll-wrapper .image-roll-focus .image-roll-on {
+    background-color: orangered;
+}
+.image-roll-wrapper a {
+    position: absolute;
+    display: none;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+    opacity: .3;
+    z-index: 2;
+}
+.image-roll-wrapper .image-roll-prev {
+    left: 20px;
+}
+.image-roll-wrapper .image-roll-next {
+    right: 20px;
+}
+.image-roll-wrapper:hover a {
+    display: block;
+}
+.image-roll-wrapper a:hover {
+    opacity: .7;
+}
