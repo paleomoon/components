@@ -1,5 +1,10 @@
 # components
-JS组件开发
+Components written by Javascript.
 ## DatePicker
-- [代码地址](https://github.com/JimHoo/components/tree/master/DatePicker)
-- [预览地址](https://jimhoo.github.io/components/DatePicker/index.html)
+- [Code](https://github.com/JimHoo/components/tree/master/DatePicker)
+- [Preview](https://jimhoo.github.io/components/DatePicker/index.html)
+
+## ImageRoll
+- [Code](https://github.com/JimHoo/components/tree/master/ImageRoll)
+- [Preview](https://jimhoo.github.io/components/ImageRoll/index.html)
+

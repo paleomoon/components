@@ -9,7 +9,7 @@
     var list, prevBtn, nextBtn, focus, focusElems;
 
     var interval = 3000;//动画执行间隔 默认3000
-    var span = 10;//图片两次移动时间间隔（平滑程度）
+    var span = 10;//一张图片平移时间间隔（平滑程度）
     var time;//移动执行时间
     
     /**
@@ -21,50 +21,60 @@
      *@param playInterval 可选，轮播时间间隔
      *@param playTime 可选，图片移动时间
      */
-    imageRoll.init = function (imgList, imageWidth, imageHeight, selector, playInterval, playTime) {
+    imageRoll.init = function (imgList, selector, playInterval, playTime) {
         imageList = imgList.slice();
         imageNum = imgList.length;
-        width = imageWidth;
-        height = imageHeight;
         interval = playInterval || interval;
-
-        //获取默认移动动画执行时间
-        var getTime = function () {
-            var arr = [];
-            var n = 1;
-            do {
-                if (span * width % n == 0) {
-                    if (n % span == 0) {
-                        arr.push(n);
-                    }
-                }
-                n++;
-            }while (n <= span * width);
-            return arr;
-        };
-        var timeArr = getTime();
-        //取大于等于图像宽度的第一个值，这样速度适中
-        for (var i = 0, len = timeArr.length; i < len; i++) {
-            if (timeArr[i] >= width) {
-                time = timeArr[i];
-                break;
-            }
-        }
-        time = playTime || time;
-
-        container = document.querySelector(selector);
-
-        imageRoll.render();
 
         imageRoll.imageNum = imageNum;
         imageRoll.imageList = imageList;
-        imageRoll.timeArray = timeArr;//提供参数playTime可能的选值
+        imageRoll.complete = false;//是否初始化完毕
+
+        //获取图像宽高，onload必须在src之前
+        var image = new Image();
+        image.onload = function () {
+            width = image.width;
+            height = image.height;
+
+            //获取默认移动动画执行时间
+            var getTime = function () {
+                var arr = [];
+                var n = 1;
+                do {
+                    if (span * width % n == 0) {
+                        if (n % span == 0) {
+                            arr.push(n);
+                        }
+                    }
+                    n++;
+                }while (n <= span * width);
+                return arr;
+            };
+            var timeArr = getTime();
+            //取大于等于图像宽度的第一个值，这样速度适中
+            for (var i = 0, len = timeArr.length; i < len; i++) {
+                if (timeArr[i] >= width) {
+                    time = timeArr[i];
+                    break;
+                }
+            }
+            time = playTime || time;
+
+            container = document.querySelector(selector);
+
+            render();
+            play();
+
+            imageRoll.playTime = timeArr;//提供参数playTime可能的选值
+            imageRoll.complete = true;
+        };
+        image.src = imgList[0];
     };
 
     /**
      *渲染HTML及调整样式
      */
-    imageRoll.render = function () {
+    render = function () {
         /**
          *获取html
          */
@@ -112,9 +122,9 @@
     };
 
     /**
-     *播放 init()之后调用该方法
+     *播放
      */
-    imageRoll.play = function () {
+    play = function () {
         var index = 1;
         var timer;
         var isMoving = false;//动画是否正在执行

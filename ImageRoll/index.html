@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>image-roll</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container"></div>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript">
+        var image = [
+        "http://omcbb8o2a.bkt.clouddn.com/image/github/components/ImageRoll/image/1.jpg", 
+        "http://omcbb8o2a.bkt.clouddn.com/image/github/components/ImageRoll/image/2.jpg", 
+        "http://omcbb8o2a.bkt.clouddn.com/image/github/components/ImageRoll/image/3.jpg", 
+        "http://omcbb8o2a.bkt.clouddn.com/image/github/components/ImageRoll/image/4.jpg", 
+        "http://omcbb8o2a.bkt.clouddn.com/image/github/components/ImageRoll/image/5.jpg"
+        ];
+        imageRoll.init(image, ".container");
+        if (imageRoll.complete) {
+            console.log(imageRoll.timeArray);
+        }
+        
+    </script>
+</body>
+</html>
