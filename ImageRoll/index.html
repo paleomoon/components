@@ -17,10 +17,11 @@
         "http://omcbb8o2a.bkt.clouddn.com/image/github/components/ImageRoll/image/5.jpg"
         ];
         imageRoll.init(image, ".container");
-        if (imageRoll.complete) {
-            console.log(imageRoll.timeArray);
-        }
-        
+        setTimeout(function () {
+            if (imageRoll.complete) {
+                console.log(imageRoll.playTime);
+            }
+        }, 1000);
     </script>
 </body>
 </html>
