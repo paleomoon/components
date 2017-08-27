@@ -74,7 +74,7 @@
     /**
      *渲染HTML及调整样式
      */
-    render = function () {
+    var render = function () {
         /**
          *获取html
          */
@@ -124,7 +124,7 @@
     /**
      *播放
      */
-    play = function () {
+    var play = function () {
         var index = 1;
         var timer;
         var isMoving = false;//动画是否正在执行
