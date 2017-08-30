@@ -1,10 +1,10 @@
 # components
 Components written by Javascript.
 ## DatePicker
-- [Code](https://github.com/JimHoo/components/tree/master/DatePicker)
-- [Preview](https://jimhoo.github.io/components/DatePicker/index.html)
+- [Code](https://github.com/paleomoon/components/tree/master/DatePicker)
+- [Preview](https://paleomoon.github.io/components/DatePicker/index.html)
 
 ## ImageRoll
-- [Code](https://github.com/JimHoo/components/tree/master/ImageRoll)
-- [Preview](https://jimhoo.github.io/components/ImageRoll/index.html)
+- [Code](https://github.com/paleomoon/components/tree/master/ImageRoll)
+- [Preview](https://paleomoon.github.io/components/ImageRoll/index.html)
 

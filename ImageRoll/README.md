@@ -6,5 +6,5 @@
 第三个参数为轮播时间间隔，默认3000；  
 第四个参数为图片移动速度，该参数的选择根据图片宽度而定，具体可选的值可通过控制台输出imageRoll.playTime得到。
 # DEMO
-[Preview](https://jimhoo.github.io/components/ImageRoll/index.html)
+[Preview](https://paleomoon.github.io/components/ImageRoll/index.html)
 
